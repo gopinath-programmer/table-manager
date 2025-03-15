@@ -133,7 +133,7 @@ function Form() {
             />
           </td>
           <td className="table-manager-columns" >
-            <button onClick={setAdd}>Add</button>
+            <button onClick={setAdd} className="table-manager-button" >Add</button>
           </td>
         </tr>
   );

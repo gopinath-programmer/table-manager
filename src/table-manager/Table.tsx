@@ -26,7 +26,7 @@ function Table(){
             {_.map(_.values(details) , (detail , j) => (
               <td className="table-manager-columns" key={j} >{_.isArray(detail) ? _.join(detail , ',') : _.toString(detail)}</td>
             ))}
-            <td className="table-manager-columns" onClick={() => deleteRow(details.id)} ><button>delete</button></td>
+            <td className="table-manager-columns" onClick={() => deleteRow(details.id)} ><button className="table-manager-button" >delete</button></td>
             </tr>
           ))
         } 

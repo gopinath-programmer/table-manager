@@ -16,13 +16,13 @@ function Footer() {
 
   return (
     <div>
-      <div>
-        <button onClick={() => setTabOption("Detail")}>Detail</button>
-        <button onClick={() => setTabOption("Log")}>Log</button>
-        <button onClick={() => setTabOption("Delete")}>Delete</button>
+      <div className="button-container" >
+        <button className="table-manager-button footer" onClick={() => setTabOption("Detail")}>Detail</button>
+        <button className="table-manager-button footer"  onClick={() => setTabOption("Log")}>Log</button>
+        <button className="table-manager-button"  onClick={() => setTabOption("Delete")}>Delete</button>
       </div>
       {tabOption === "Detail" && detail && (
-        <div>
+        <div className="extra-card" >
           <h3>Detail For: {detail.name}</h3>
           <div>
             <p>{detail.description}</p>
@@ -41,17 +41,17 @@ function Footer() {
           </a>
         </div>
       )}
-      {tabOption === 'Log' && (
-        <div>
+      {tabOption === 'Log' && _.size(selectedDetails) === 1 &&(
+        <div  className="extra-card" >
           See the console
         </div>
       )}
       {tabOption === 'Delete' && _.size(selectedDetails) !== 0 && (
-        <div>
+        <div  className="extra-card" >
           Do you want to delete selected items? 
-          <div>
-            <button onClick = {deleteSelected}>Yes</button>
-            <button onClick={() => setTabOption("Delete")}>No</button>
+          <div className="confirmation" >
+            <button onClick = {deleteSelected} className="table-manager-button">Yes</button>
+            <button onClick={() => setTabOption("Delete")} className="table-manager-button">No</button>
           </div>
         </div>
       )}

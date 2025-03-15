@@ -70,7 +70,7 @@ const tableReducer = produce((state: Table, action: Action) => {
             _.includes(state.selectedDetails, details.id) &&
             _.size(state.selectedDetails) === 1
           ) {
-            console.log(_.fromPairs(_.toPairs(details)));
+            console.log(_.fromPairs(_.entries(details)));
           }
         });
       }
